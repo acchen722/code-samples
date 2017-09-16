@@ -2,16 +2,16 @@
 <head>
   <!--
   <?php
-    $fldrname = $_POST["new_folder"];
+    $src_item = $_POST["src"];
     $browser_folder = $_GET["path"];
+    $dst_name = $_POST["new_name"];
 
     $pwd = realpath("./files");
     $src_folder = realpath($browser_folder);
-    $new_folder_path = sprintf("%s/%s", $src_folder, $fldrname);
-    if ($src_folder !== realpath("files/recycle_bin")){
-      mkdir($new_folder_path);
-    }
-    printf($new_folder_path);
+    $new_item = sprintf("%s/%s", $src_folder, $dst_name);
+
+//    printf("%s -> %s", $src_item, $new_item);
+    rename($src_item, $new_item);
   ?>
   -->
 </head>
